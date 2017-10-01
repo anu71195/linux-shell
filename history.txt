@@ -1,0 +1,36 @@
+ 1 ls
+ 2 pwd
+ 3 mkdir a
+ 4 touch a b c
+ 5 ls
+ 6 rm abc
+ 7 rmdir a
+ 8 touch a 
+ 9 mkdir ab
+ 10 rmexcept a.out AS1.pdf history.txt shell2.c shell.c
+ 11 ls
+ 12 history
+ 13 issue 3
+ 14 ls
+ 15 history 3
+ 16 exit
+ 17 temp
+ 18 ./temp
+ 19 ./temp 3
+ 20 [Aexit
+ 21 exit
+ 22 ./temp < a
+ 23 cat a
+ 24 ./temp < abc.txt
+ 25 touch abc.txt
+ 26 ./temp <abc.txt
+ 27 ./temp>abc.txt
+ 28  28 exit
+ 29 ./temp <abc.txt
+ 30  30 echo sdlfk
+ 31 export -p
+ 32 export MY=1
+ 33 export -p
+ 34 echo $my
+ 35 echo $MY
+ 36  36 

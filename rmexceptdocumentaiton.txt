@@ -1,0 +1,15 @@
+lsh_rmexcept()
+rmexcept function deletes all the files and folders except the ones which are given as its arguments. Arguments can be from 0 to any number of files. whenever rmexcept is called with some arguments(there can be even no arguments) then the function will first get all the files and folders by recursively gather the file names and folders from the current direction where the shell is present. the function to gather files and folders name is get_files_folders() with no argument. The function will return the names of folders and files present in the current directory. After gathering all the information about files and directories, it will see which are the files are present in the arguments given by the user(it will also remove all the white spaces gathered while collection individual file name and directory name and remove it). If that files name is not present in the argument given by the user then the file will be deleted. This will be done for each and every file present in the directory. This will make sure all the files except the ones given by the user as argument are deleted inclusive of directories. strcmp()function is used to compare the argument given by the user and name of files and directories. A function is_dir is created to check whether the given argument is a directory if not a directory then rm command to delete the file is used else rmdir is used to delete the directory. Finally lsh_launch function is used where the file name is passed on and the argument of rm or rmdir is given  accordingly. lsh_launch executes the rm or rmdir command.
+
+
+Dependencies:-
+
+get_files_folders()
+this function uses the dirent.h library of the c and the inbuilt functions already inside that library to gather files and folders. It will open the current directory and if successfully opened then it will use readdir() function to get the file and if the pointer is null it will break the loop else it will gather the information and store and finally return it at the end of the function.
+
+lsh_launch()
+it it will first fork and create a child process and will send the parent to the waiting status while the child is not exited or terminated. while the parent is waiting child will use the execvp function and use rm or rmdir function to delete the files or folders as present in the argument given to this function. if any error it gives an error and return to the shell.
+
+
+contribution:
+ 
